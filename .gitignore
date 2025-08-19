@@ -134,3 +134,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Build outputs
+client/dist
+server/dist
+
+# Example env (keep real .env ignored above)
+.env.example

@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App shell layout */
+html, body, #root {
+  height: 100%;
+}
+body {
+  background-color: #F5F1E3; /* ivory */
+  color: #2C2C2C; /* charcoal */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
