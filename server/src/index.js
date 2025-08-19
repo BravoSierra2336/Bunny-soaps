@@ -32,10 +32,9 @@ if (process.env.NODE_ENV === 'production') {
   // Serve static files from client build
   app.use(express.static(clientDistPath));
 
-  // SPA fallback: send index.html for any non-API route
-  app.get('*', (req, res) => {
-    // Avoid intercepting API routes explicitly
-    if (req.path.startsWith('/api')) return res.status(404).json({ error: 'Not found' });
+  // SPA fallback for any GET route that doesn't start with /api
+  // Express 5 uses path-to-regexp v6, so avoid '*' catch-alls.
+  app.get(/^\/(?!api).*/, (req, res) => {
     res.sendFile(path.join(clientDistPath, 'index.html'));
   });
 }
