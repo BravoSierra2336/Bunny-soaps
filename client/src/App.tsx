@@ -5,9 +5,17 @@ export default function App() {
     <div className="min-h-full flex flex-col">
       <header className="sticky top-0 z-10 bg-ivory/80 backdrop-blur border-b border-viridian/20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="text-2xl font-extrabold tracking-tight text-viridian">🐰 Bunny&apos;s</span>
-            <span className="text-2xl font-extrabold tracking-tight text-charcoal">Soaps &amp; Scrubs</span>
+          <Link to="/" className="flex items-center gap-3">
+            <span className="h-10 w-10 rounded-full overflow-hidden ring-1 ring-viridian/20 bg-ivory/80 flex items-center justify-center">
+              <img
+                src="/logo-bunnys-soaps.png"
+                alt="Bunny's Soaps & Scrubs logo"
+                className="h-full w-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
+            </span>
+            <span className="sr-only">Bunny&apos;s Soaps &amp; Scrubs</span>
           </Link>
           <nav className="flex items-center gap-6">
             <NavLink to="/" end className={({isActive}) => `text-sm font-medium ${isActive ? 'text-viridian' : 'text-charcoal/70 hover:text-charcoal'}`}>Home</NavLink>

@@ -16,5 +16,3 @@ services:
         value: production
       - key: MONGODB_URI
         sync: false
-      - key: PORT
-        value: 10000
