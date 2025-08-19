@@ -18,15 +18,15 @@ export default function ProductDetailPage() {
   if (!product) return <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">Loading…</div>
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-      <div className="grid lg:grid-cols-2 gap-10">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+      <div className="grid lg:grid-cols-2 gap-6 sm:gap-10">
         <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-viridian/10 to-goldenrod/10" />
         <div>
           <h1 className="text-3xl font-bold text-charcoal">{product.name}</h1>
           <p className="mt-2 text-charcoal/80">{product.description}</p>
           <div className="mt-4 text-sienna text-2xl font-semibold">${product.price.toFixed(2)}</div>
 
-          <button className="mt-6 inline-flex items-center rounded-full bg-viridian px-6 py-3 text-white font-medium shadow-sm hover:brightness-105 transition">
+          <button className="mt-6 inline-flex items-center rounded-full bg-viridian px-5 py-3 sm:px-6 text-white font-medium shadow-sm hover:brightness-105 transition">
             Add to cart
           </button>
 

@@ -39,7 +39,7 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {products.map((p) => (
           <Link key={p.slug} to={`/products/${p.slug}`} className="group rounded-2xl border border-viridian/20 p-4 hover:shadow-md transition bg-ivory">
             <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-viridian/10 to-goldenrod/10 mb-4" />

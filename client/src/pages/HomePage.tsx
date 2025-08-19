@@ -13,11 +13,11 @@ export default function HomePage() {
               Handcrafted soaps and scrubs made with nourishing oils, gentle exfoliants, and playful scents.
               Treat your skin to something sweet—always cruelty-free.
             </p>
-            <div className="mt-8 flex items-center gap-4">
-              <Link to="/products" className="inline-flex items-center rounded-full bg-viridian px-6 py-3 text-white font-medium shadow-sm hover:brightness-105 transition">
+            <div className="mt-8 flex items-center gap-3 sm:gap-4">
+              <Link to="/products" className="inline-flex items-center rounded-full bg-viridian px-5 py-3 sm:px-6 text-white font-medium shadow-sm hover:brightness-105 transition">
                 Shop now
               </Link>
-              <a href="#featured" className="text-sienna hover:text-goldenrod font-medium">See featured</a>
+              <a href="#featured" className="text-sienna hover:text-goldenrod font-medium text-sm sm:text-base">See featured</a>
             </div>
           </div>
           <div className="aspect-square rounded-3xl bg-[radial-gradient(circle_at_30%_30%,#DAA52022,transparent_60%),radial-gradient(circle_at_70%_60%,#40826D22,transparent_60%)] shadow-inner" />
@@ -40,7 +40,7 @@ function FeaturedProducts() {
     { name: 'Oatmeal Honey Soap', price: 6.99, slug: 'oatmeal-honey-soap' },
   ]
   return (
-    <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
       {items.map((p) => (
         <Link key={p.slug} to={`/products/${p.slug}`} className="group rounded-2xl border border-viridian/20 p-4 hover:shadow-md transition bg-ivory">
           <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-viridian/10 to-goldenrod/10 mb-4" />
