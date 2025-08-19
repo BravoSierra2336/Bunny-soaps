@@ -27,39 +27,47 @@ export default function App() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-charcoal/80 hover:text-charcoal hover:bg-viridian/10 focus:outline-none focus:ring-2 focus:ring-viridian/40"
+            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-charcoal/80 hover:text-charcoal hover:bg-viridian/10 focus:outline-none focus:ring-2 focus:ring-viridian/40 transition-colors"
             aria-controls="mobile-menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
           >
             <span className="sr-only">Toggle navigation</span>
-            <span className="block h-0.5 w-5 bg-current mb-1"></span>
-            <span className="block h-0.5 w-5 bg-current mb-1"></span>
-            <span className="block h-0.5 w-5 bg-current"></span>
+            <span
+              className={`block h-0.5 w-5 bg-current transform transition duration-300 ${menuOpen ? 'translate-y-1.5 rotate-45' : ''}`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-current my-1 transform transition duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}
+            />
+            <span
+              className={`block h-0.5 w-5 bg-current transform transition duration-300 ${menuOpen ? '-translate-y-1.5 -rotate-45' : ''}`}
+            />
           </button>
         </div>
-        {/* Mobile nav panel */}
-        {menuOpen && (
-          <div id="mobile-menu" className="md:hidden border-t border-viridian/20 bg-ivory/95">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex flex-col gap-2">
-              <NavLink
-                to="/"
-                end
-                onClick={() => setMenuOpen(false)}
-                className={({isActive}) => `px-2 py-2 rounded-md text-sm font-medium ${isActive ? 'text-viridian bg-viridian/10' : 'text-charcoal/80 hover:text-charcoal hover:bg-viridian/10'}`}
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/products"
-                onClick={() => setMenuOpen(false)}
-                className={({isActive}) => `px-2 py-2 rounded-md text-sm font-medium ${isActive ? 'text-viridian bg-viridian/10' : 'text-charcoal/80 hover:text-charcoal hover:bg-viridian/10'}`}
-              >
-                Shop
-              </NavLink>
-            </div>
+        {/* Mobile nav panel (animated) */}
+        <div
+          id="mobile-menu"
+          className={`md:hidden border-t border-viridian/20 bg-ivory/95 overflow-hidden transition-all duration-300 ease-out ${menuOpen ? 'max-h-40 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-1 pointer-events-none'}`}
+          aria-hidden={!menuOpen}
+        >
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex flex-col gap-2">
+            <NavLink
+              to="/"
+              end
+              onClick={() => setMenuOpen(false)}
+              className={({isActive}) => `px-2 py-2 rounded-md text-sm font-medium transition-colors ${isActive ? 'text-viridian bg-viridian/10' : 'text-charcoal/80 hover:text-charcoal hover:bg-viridian/10'}`}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/products"
+              onClick={() => setMenuOpen(false)}
+              className={({isActive}) => `px-2 py-2 rounded-md text-sm font-medium transition-colors ${isActive ? 'text-viridian bg-viridian/10' : 'text-charcoal/80 hover:text-charcoal hover:bg-viridian/10'}`}
+            >
+              Shop
+            </NavLink>
           </div>
-        )}
+        </div>
       </header>
 
       <main className="flex-1">
