@@ -15,7 +15,8 @@ app.use(express.json());
 // Static assets (e.g., product images)
 app.use('/images', express.static('public/images'));
 
-app.get('/', (req, res) => {
+// API health endpoint
+app.get('/api', (req, res) => {
   res.json({ name: "Bunny's Soaps & Scrubs API", status: 'ok' });
 });
 
